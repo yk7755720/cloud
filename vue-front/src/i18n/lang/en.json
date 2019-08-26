@@ -1,0 +1,34 @@
+{
+  "message": {
+    "sysname": "OP SYSTEM",
+    "sign_in": "SIGN IN",
+    "sign_up": "SIGN UP",
+    "login": {
+      "username": "Username",
+      "password": "Password",
+      "username_error": "Please fill in the user name",
+      "password_error": "Please fill in the password"
+    },
+    "home": {
+      "title": "HOME",
+      "ownSpace": "Modify Password",
+      "switchLang": "Switch Lang",
+      "loginOut": "Login Out",
+      "tagOption":"Options",
+      "tagClearAll":"Clear All",
+      "tagCloseOther":"Close Others"
+    },
+    "index":"Welcome to background management system of jiangsu fumeiyu medical technology co., LTD's Medical visual platform",
+    "sql":{
+      "title": "LOG MANAGE",
+      "maintenceTitle":"MAINTENCE",
+      "executeTitle": "EXECUTE"
+    }
+  },
+	
+	"validation": {
+		"user": {
+			"nameNotEmpty": "name cann't be empty"
+		}
+	}
+}

@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: ym-unity
+  profiles:
+        active: @profileActive@
+  #============================== ZIPKIN 调用链，开发时可注掉 ==================================
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: true
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0  #zipkin采集率  0.1表示 10%采集率
+  servlet:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+
+server:
+  port: 18992
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
+
+# 配置swagger
+swagger:
+  title: API接口文档
+  description: unity
+  version: 1.0.0
+  termsOfServiceUrl: http://blog.csdn.net
+  contact:
+    name: unity
+    url: http://blog.csdn.net
+    email:
+
+
+

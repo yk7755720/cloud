@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: service
+  #============================== ZIPKIN 调用链，开发时可注掉 ==================================
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: true
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0  #zipkin采集率  0.1表示 10%采集率
+  http:
+      encoding:
+        charset: UTF-8
+        force: true
+        enabled: true
+server:
+  port: 18991
+
+logging:
+  level:
+    com.web-service: DEBUG
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
+
+
+
+feign:
+  hystrix:
+    enabled: true      #启动断路器先关了要用自己开
+

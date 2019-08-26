@@ -1,0 +1,39 @@
+server:
+  port: 16666
+spring:
+  application:
+      name: service-gateway
+  cloud:        # spring cloud gateway 路由配置方式
+    gateway:
+      discovery:      #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+        locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问。
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        #- id: web-service
+         # uri: lb://web-service
+         # predicates:
+         # - Path=/web-service/**
+
+       # - id: web-two
+        #  uri: lb://web-two
+        #  predicates:
+         # - Path=/web-two/**
+
+
+logging:
+  level:
+    com.web-service: DEBUG
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
+
+
+
+
+
+
